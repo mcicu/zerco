@@ -1,6 +1,6 @@
 # Zerco Infrastructure
 
-Site de prezentare în limba română, scris pentru **PHP 7.4**, fără framework, Composer, Node sau bază de date. Interfață responsive cu verde petrol, grafit și lime, simbol propriu SVG, fotografii și fonturi locale. JavaScript simplu pentru meniul mobil și filtrele de proiecte; FAQ prin elemente HTML native.
+Site de prezentare în limba română, scris pentru **PHP 7.4**, fără framework, Composer, Node sau bază de date. Interfață responsive cu bleumarin, albastru deschis și accente galbene, logo PNG cu fundal transparent, fotografii și fonturi locale. JavaScript simplu pentru meniul mobil; FAQ prin elemente HTML native.
 
 ## Pornire
 
@@ -16,9 +16,9 @@ Deschide `http://localhost:8080`. Nu este necesară instalarea de pachete și nu
 
 - Acasă: `index.php`
 - Despre noi: `despre-noi.php`
-- Servicii: `servicii.php`, cu șase pagini generate de `serviciu.php?serviciu=...`
+- Servicii: `servicii.php`, cu patru pagini generate de `serviciu.php?serviciu=...`
 - Domenii: `domenii.php`
-- Proiecte: `proiecte.php`, cu filtre și scenarii explicit ilustrative
+- Proiecte: `proiecte.php`, cu scenarii explicit ilustrative pentru un drum local și un pod rutier
 - Contact: `contact.php`
 - Cariere și colaborări: `cariere.php`
 - Confidențialitate și pagină 404
@@ -27,15 +27,15 @@ Datele comune și descrierile serviciilor se editează în `includes/data.php`. 
 
 ## Configurarea contactului
 
-Adresa de email nu a fost inventată. Până la configurarea ei și a expeditorului, formularul afișează starea indisponibilă și nu permite trimiterea. Configurează variabilele de mediu ale serverului PHP:
+Adresa de primire a mesajelor este implicit `office@zercoinfrastructure.ro`, iar expeditorul este `website@zercoinfrastructure.ro`. Formularul permite trimiterea când adresele sunt valide și funcția PHP `mail()` este disponibilă. Valorile implicite pot fi suprascrise prin variabilele de mediu ale serverului PHP:
 
 ```text
 SITE_URL=https://zercoinfrastructure.ro
-CONTACT_EMAIL=adresa-reala-a-firmei@domeniul-firmei.ro
-MAIL_FROM=expeditor-valid@domeniul-firmei.ro
+CONTACT_EMAIL=office@zercoinfrastructure.ro
+MAIL_FROM=website@zercoinfrastructure.ro
 ```
 
-Aceste valori sunt exemple, de înlocuit cu adrese reale. PHP citește variabilele prin `getenv()`. Proiectul **nu încarcă automat fișiere `.env`**. Pe hosting fără variabile de mediu, poți configura aceleași valori direct în `includes/data.php`.
+Găzduirea trebuie să permită trimiterea de la `website@zercoinfrastructure.ro`. PHP citește variabilele prin `getenv()`. Proiectul **nu încarcă automat fișiere `.env`**. Pe hosting fără variabile de mediu, poți configura aceleași valori direct în `includes/data.php`.
 
 Trimiterea folosește funcția PHP `mail()` și transportul MTA configurat de hosting. `MAIL_FROM` trebuie să fie o adresă permisă de acel transport. Nu există un client SMTP sau o integrare cu un furnizor de email în proiect. Configurează transportul și înregistrările DNS aferente domeniului în panoul găzduirii. Confirmarea din formular înseamnă că transportul local a acceptat mesajul, nu o garanție de livrare în inbox.
 
@@ -53,16 +53,17 @@ Folosește HTTPS. Dacă serverul stă în spatele unui proxy, configurează în 
 
 ## Fotografii și fonturi
 
-**Nicio imagine nu a fost preluată de pe likeconsulting.ro.** Referința a fost folosită pentru a înțelege tipul de business și structura serviciilor. Textele, stilul, paleta și simbolul Zerco sunt create pentru acest proiect.
+**Nicio imagine nu a fost preluată de pe likeconsulting.ro.** Referința a fost folosită pentru a înțelege tipul de business și structura serviciilor. Textele și stilul sunt create pentru acest proiect. Paleta urmărește logo-ul Zerco furnizat în `assets/images/logo-zerco.jpeg`; versiunea cu fundal transparent folosită în antet și subsol este `assets/images/logo-zerco.png`.
 
-Imagini de ilustrare descărcate local din surse independente:
+Imagini de ilustrare găzduite local:
 
 - `assets/images/bridge.jpg`: nod rutier, [Pexels, foto 681335](https://www.pexels.com/photo/681335/).
-- `assets/images/construction.jpg`: șantier, [Pexels, foto 159306](https://www.pexels.com/photo/159306/).
-- `assets/images/architecture.jpg`: clădiri, [Unsplash, foto 1486406146926-c627a92ad1ab](https://images.unsplash.com/photo-1486406146926-c627a92ad1ab).
+- `assets/images/drum-local.jpg`: imagine generată cu imagegen exclusiv pentru scenariul ilustrativ „Modernizarea unui drum local”. Prompt: drum local modernizat printr-un peisaj rural de toamnă, cu asfalt nou, marcaje albe și lumină caldă. Nu documentează un amplasament sau o lucrare reală.
+- `assets/images/pod-padure.jpg`: imagine generată cu imagegen pentru scenariul ilustrativ „Reabilitarea unui pod rutier”. Reprezintă un pod rutier simplu din beton peste un râu, într-o pădure de toamnă, cu lumină și culori calde; nu documentează un amplasament sau o lucrare reală.
+- `assets/images/architecture.jpg`: imagine cu clădiri folosită în secțiunea „Partenerul tău în dezvoltare” de pe pagina principală, [Unsplash, foto 1486406146926-c627a92ad1ab](https://images.unsplash.com/photo-1486406146926-c627a92ad1ab).
 
 Fotografiile nu documentează lucrări ale firmei. Fonturi DM Sans și Manrope, găzduite local în `assets/fonts/`, cu licențele SIL Open Font License incluse. Site-ul nu apelează Google Fonts la vizitare și nu include analytics, hărți, reclame sau tracking.
 
 ## Verificare
 
-Nu au fost create sau rulate teste, conform cerinței. PHP nu este instalat în mediul în care a fost generat proiectul, astfel încât nu s-a efectuat execuția în PHP sau verificarea vizuală în browser. Nu s-a publicat pe un serviciu extern; proiectul este pregătit pentru găzduire PHP.
+Nu au fost scrise teste, conform cerinței. Verificarea sintaxei pentru toate fișierele PHP și încărcarea paginilor și resurselor locale au trecut pe PHP 8.4.28. Logo-ul PNG a fost verificat pe fundal alb și albastru deschis. Verificarea vizuală a paginilor în browser nu a putut fi finalizată după resetarea conexiunii la browser. Nu s-a publicat pe un serviciu extern; proiectul este pregătit pentru găzduire PHP.

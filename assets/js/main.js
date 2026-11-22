@@ -25,21 +25,6 @@ if (menuButton && navigation) {
     });
     window.matchMedia('(min-width: 921px)').addEventListener('change', closeMenu);
 }
-const filters = document.querySelectorAll('[data-filter]');
-const projects = document.querySelectorAll('[data-category]');
-filters.forEach(button => {
-    button.addEventListener('click', () => {
-        const category = button.dataset.filter;
-        filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
-        let count = 0;
-        projects.forEach(project => {
-            project.hidden = category !== 'all' && project.dataset.category !== category;
-            if (!project.hidden) count++;
-        });
-        const status = document.getElementById('filter-status');
-        if (status) status.textContent = count + (count === 1 ? ' scenariu afișat' : ' scenarii afișate');
-    });
-});
 document.querySelectorAll('.back-top').forEach(link => {
     link.addEventListener('click', event => {
         event.preventDefault();

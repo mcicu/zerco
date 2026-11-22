@@ -5,8 +5,6 @@ function icon($name, $class = '') {
     $paths = [
         'road' => '<path d="m6 3-3 18M18 3l3 18M12 3v4m0 3v4m0 3v4"/>',
         'bridge' => '<path d="M2 15h20M5 7v14M19 7v14M5 8c4 8 10 8 14 0M2 10l3-2m14 0 3 2M9 12v3m6-3v3"/>',
-        'building' => '<path d="M4 21V7l9-4v18M13 10h7v11M2 21h20M8 8v2m0 3v2m9-1v2M8 18v3"/>',
-        'network' => '<path d="M12 8v5M5 17v-4h14v4"/><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/>',
         'compass' => '<circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/>',
         'helmet' => '<path d="M4 15v-3a8 8 0 0 1 16 0v3M9 4v7m6-7v7M2 15h20v4H2z"/>',
         'check' => '<path d="m5 12 4 4L19 6"/>',

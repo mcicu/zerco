@@ -2,7 +2,7 @@
 require_once __DIR__ . '/bootstrap.php';
 $page = isset($page) ? $page : 'home';
 $title = isset($title) ? $title : 'Inginerie pentru ceea ce urmează';
-$description = isset($description) ? $description : 'Zerco Infrastructure — proiectare și consultanță pentru infrastructură rutieră, poduri, construcții civile și rețele de utilități.';
+$description = isset($description) ? $description : 'Zerco Infrastructure — proiectare și consultanță pentru infrastructură rutieră și poduri.';
 $canonicalFile = basename($_SERVER['SCRIPT_NAME']);
 $canonical = $site['url'] . '/' . ($canonicalFile === 'index.php' ? '' : $canonicalFile);
 if ($canonicalFile === 'serviciu.php' && isset($slug, $services[$slug])) { $canonical .= '?serviciu=' . rawurlencode($slug); }
@@ -12,7 +12,7 @@ if ($canonicalFile === 'serviciu.php' && isset($slug, $services[$slug])) { $cano
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#123b3a">
+    <meta name="theme-color" content="#153b5b">
     <title><?= e($title) ?> | Zerco Infrastructure</title>
     <meta name="description" content="<?= e($description) ?>">
     <link rel="canonical" href="<?= e($canonical) ?>">
@@ -31,7 +31,7 @@ if ($canonicalFile === 'serviciu.php' && isset($slug, $services[$slug])) { $cano
 <div class="topbar"><div class="container"><span>Viziune clară. Inginerie responsabilă.</span><a href="contact.php">Să construim următorul proiect împreună.</a></div></div>
 <header class="site-header">
     <div class="container header-inner">
-        <a class="brand" href="index.php" aria-label="Zerco Infrastructure — Acasă"><svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M5 7h38L17 33h26v8H5v-8L31 15H5V7Z" fill="currentColor"/><path d="M5 22h12L5 34V22Z" fill="#bce467"/></svg><span><strong>zerco<span class="brand-period">.</span></strong><small>INFRASTRUCTURE</small></span></a>
+        <a class="brand" href="index.php" aria-label="Zerco Infrastructure — Acasă"><img class="brand-logo" src="assets/images/logo-zerco.png" alt="Zerco Infrastructure" width="768" height="512"></a>
         <button class="menu-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
         <nav id="main-nav" class="main-nav" aria-label="Navigare principală">
             <?php foreach (['home' => ['index.php', 'Acasă'], 'about' => ['despre-noi.php', 'Despre noi'], 'services' => ['servicii.php', 'Servicii'], 'projects' => ['proiecte.php', 'Proiecte'], 'domains' => ['domenii.php', 'Domenii']] as $key => $nav): ?>
