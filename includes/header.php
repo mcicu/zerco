@@ -6,6 +6,7 @@ $description = isset($description) ? $description : 'Zerco Infrastructure — pr
 $canonicalFile = basename($_SERVER['SCRIPT_NAME']);
 $canonical = $site['url'] . '/' . ($canonicalFile === 'index.php' ? '' : $canonicalFile);
 if ($canonicalFile === 'serviciu.php' && isset($slug, $services[$slug])) { $canonical .= '?serviciu=' . rawurlencode($slug); }
+if ($canonicalFile === 'serviciu.php' && isset($scenario)) { $canonical .= '&scenariu=' . rawurlencode($scenario['slug']); }
 ?>
 <!doctype html>
 <html lang="ro">
@@ -21,7 +22,7 @@ if ($canonicalFile === 'serviciu.php' && isset($slug, $services[$slug])) { $cano
     <meta property="og:title" content="<?= e($title) ?> | Zerco Infrastructure">
     <meta property="og:description" content="<?= e($description) ?>">
     <meta property="og:url" content="<?= e($canonical) ?>">
-    <meta property="og:image" content="<?= e($site['url']) ?>/assets/images/bridge.jpg">
+    <meta property="og:image" content="<?= e($site['url']) ?>/assets/images/<?= e(isset($scenario) ? $scenario['image'] : 'bridge.jpg') ?>">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js" defer></script>

@@ -25,6 +25,8 @@ Deschide `http://localhost:8080`. Nu este necesară instalarea de pachete și nu
 
 Datele comune și descrierile serviciilor se editează în `includes/data.php`. Antetul și subsolul sunt comune. SEO: titluri și descrieri pe pagini, URL canonical, metadate Open Graph, favicon, sitemap și robots.txt.
 
+Contoarele de pe paginile Acasă, Despre noi și Servicii sunt afișate prin componenta comună `includes/stats.php` și configurate în `$stats` din `includes/data.php`: 15 proiecte finalizate și 25 autorizații emise. Numerele se animează o singură dată la apariția în ecran; rămân vizibile fără JavaScript și fără animație pentru preferința de mișcare redusă.
+
 ## Configurarea contactului
 
 Adresa de primire a mesajelor este implicit `office@zercoinfrastructure.ro`, iar expeditorul este `website@zercoinfrastructure.ro`. Formularul permite trimiterea când adresele sunt valide și funcția PHP `mail()` este disponibilă. Valorile implicite pot fi suprascrise prin variabilele de mediu ale serverului PHP:
@@ -58,8 +60,10 @@ Folosește HTTPS. Dacă serverul stă în spatele unui proxy, configurează în 
 Imagini de ilustrare găzduite local:
 
 - `assets/images/bridge.jpg`: nod rutier, [Pexels, foto 681335](https://www.pexels.com/photo/681335/).
-- `assets/images/drum-local.jpg`: imagine generată cu imagegen exclusiv pentru scenariul ilustrativ „Modernizarea unui drum local”. Prompt: drum local modernizat printr-un peisaj rural de toamnă, cu asfalt nou, marcaje albe și lumină caldă. Nu documentează un amplasament sau o lucrare reală.
-- `assets/images/pod-padure.jpg`: imagine generată cu imagegen pentru scenariul ilustrativ „Reabilitarea unui pod rutier”. Reprezintă un pod rutier simplu din beton peste un râu, într-o pădure de toamnă, cu lumină și culori calde; nu documentează un amplasament sau o lucrare reală.
+- `assets/images/drum-local.jpg`: varianta de toamnă activă pentru scenariul „Modernizarea unui drum local”, generată cu imagegen; drum rural modernizat, frunziș de toamnă și lumină caldă.
+- `assets/images/pod-padure.jpg`: varianta de toamnă activă pentru scenariul „Reabilitarea unui pod rutier”, generată cu imagegen; pod simplu într-o pădure de toamnă, în culori calde.
+- `assets/images/drum-local-vara.jpg`: variantă de vară păstrată în assets, momentan neafișată pe site; imagine regenerată cu imagegen pentru scenariul ilustrativ „Modernizarea unui drum local”. Prompt: păstrează drumul local și încadrarea, schimbă anotimpul în primăvară/vară, cu vegetație verde, cer albastru, asfalt gri și lumină neutră, fără tonuri galbene de toamnă. Ajustare finală cu imagegen: culori de vară echilibrate, verde natural mai bogat și contrast moderat, păstrând încadrarea și structurile. Nu documentează un amplasament sau o lucrare reală.
+- `assets/images/pod-padure-vara.jpg`: variantă de vară păstrată în assets, momentan neafișată pe site; imagine regenerată cu imagegen pentru scenariul ilustrativ „Reabilitarea unui pod rutier”. Prompt: păstrează podul simplu din beton și încadrarea, schimbă pădurea în primăvară/vară, cu frunziș verde, reflexii albastre în apă și lumină neutră, fără tonuri galbene de toamnă. Ajustare finală cu imagegen: verde temperat, saturație redusă și contrast blând, păstrând încadrarea și structurile. Nu documentează un amplasament sau o lucrare reală.
 - `assets/images/architecture.jpg`: imagine cu clădiri folosită în secțiunea „Partenerul tău în dezvoltare” de pe pagina principală, [Unsplash, foto 1486406146926-c627a92ad1ab](https://images.unsplash.com/photo-1486406146926-c627a92ad1ab).
 
 Fotografiile nu documentează lucrări ale firmei. Fonturi DM Sans și Manrope, găzduite local în `assets/fonts/`, cu licențele SIL Open Font License incluse. Site-ul nu apelează Google Fonts la vizitare și nu include analytics, hărți, reclame sau tracking.

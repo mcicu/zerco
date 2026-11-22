@@ -1,4 +1,22 @@
 'use strict';
+const counters = document.querySelectorAll('[data-counter]');
+if (counters.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            counterObserver.unobserve(entry.target);
+            const target = Number(entry.target.dataset.counter);
+            const startedAt = performance.now();
+            function updateCounter(now) {
+                const progress = Math.min((now - startedAt) / 1000, 1);
+                entry.target.textContent = String(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+                if (progress < 1) requestAnimationFrame(updateCounter);
+            }
+            requestAnimationFrame(updateCounter);
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(counter => counterObserver.observe(counter));
+}
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.main-nav');
 function closeMenu() {

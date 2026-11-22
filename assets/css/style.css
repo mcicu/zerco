@@ -126,7 +126,8 @@ p+p{margin-top:18px}
 .hero p{max-width:485px;color:#d6e5f0;font-size:1.05rem;line-height:1.85}
 .hero-actions{display:flex;align-items:center;gap:31px;margin-top:34px}
 .text-link{font-size:.94rem;font-weight:500;display:inline-flex;align-items:center;gap:14px}
-.play-icon{width:28px;height:28px;border:1px solid #86a6bc;display:grid;place-items:center;font-size:1.2rem}
+.play-icon{width:28px;height:28px;border:1px solid #86a6bc;display:grid;place-items:center;flex-shrink:0;line-height:1}
+.play-icon .icon{width:16px;height:16px;stroke-width:2.5}
 .hero-caption{position:absolute;right:0;bottom:112px;display:flex;align-items:center;gap:14px;color:#e0eef8;font-size:.84rem;line-height:1.65}
 .caption-cross{font-size:2.5rem;font-weight:400;color:var(--light-blue)}
 .hero-scroll{position:absolute;bottom:29px;left:0;font-size:.8rem;color:#c5dbea;display:flex;align-items:center;gap:25px}
@@ -137,6 +138,13 @@ p+p{margin-top:18px}
 .expertise-strip strong{font-weight:650}
 .expertise-strip a{display:flex;align-items:center;gap:12px;font-size:.84rem;font-weight:550;line-height:1.5}
 .expertise-strip .icon{color:var(--blue);width:27px;flex-shrink:0}
+.company-stats{padding:42px 0;border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;margin:0}
+.stat-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.stat-item+.stat-item{border-left:1px solid var(--line)}
+.stat-item dt{font-size:.95rem;font-weight:600;color:var(--muted)}
+.stat-value{order:-1;margin:0;font:700 clamp(3rem,5vw,4.5rem)/1 var(--heading);letter-spacing:-2px;color:var(--navy);font-variant-numeric:tabular-nums}
+.stat-value:after{content:'';display:block;width:32px;height:3px;background:var(--yellow);margin:17px auto 0}
 .section{padding:100px 0}
 .section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:55px;margin-bottom:42px}
 .section-heading .eyebrow{margin-bottom:15px}
@@ -362,6 +370,10 @@ details[open] summary:after{content:'−'}
 }
 
 @media(max-width:680px){.container{width:calc(100% - 40px)}
+.company-stats{padding:32px 0}
+.stats-grid{gap:20px}
+.stat-item{padding:0 5px}
+.stat-item dt{font-size:.8rem;line-height:1.5}
 .topbar{font-size:.72rem}
 .topbar .container{min-height:31px}
 .topbar a{display:none}
