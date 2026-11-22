@@ -7,6 +7,8 @@ $canonicalFile = basename($_SERVER['SCRIPT_NAME']);
 $canonical = $site['url'] . '/' . ($canonicalFile === 'index.php' ? '' : $canonicalFile);
 if ($canonicalFile === 'serviciu.php' && isset($slug, $services[$slug])) { $canonical .= '?serviciu=' . rawurlencode($slug); }
 if ($canonicalFile === 'serviciu.php' && isset($scenario)) { $canonical .= '&scenariu=' . rawurlencode($scenario['slug']); }
+$styleVersion = substr(hash_file('sha256', __DIR__ . '/../assets/css/style.css'), 0, 12);
+$scriptVersion = substr(hash_file('sha256', __DIR__ . '/../assets/js/main.js'), 0, 12);
 ?>
 <!doctype html>
 <html lang="ro">
@@ -24,8 +26,8 @@ if ($canonicalFile === 'serviciu.php' && isset($scenario)) { $canonical .= '&sce
     <meta property="og:url" content="<?= e($canonical) ?>">
     <meta property="og:image" content="<?= e($site['url']) ?>/assets/images/<?= e(isset($scenario) ? $scenario['image'] : 'bridge.jpg') ?>">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css?v=<?= e($styleVersion) ?>">
+    <script src="assets/js/main.js?v=<?= e($scriptVersion) ?>" defer></script>
 </head>
 <body id="top" class="page-<?= e($page) ?>">
 <a class="skip-link" href="#continut">Sari la conținut</a>

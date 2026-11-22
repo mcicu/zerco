@@ -25,6 +25,8 @@ Deschide `http://localhost:8080`. Nu este necesară instalarea de pachete și nu
 
 Datele comune și descrierile serviciilor se editează în `includes/data.php`. Antetul și subsolul sunt comune. SEO: titluri și descrieri pe pagini, URL canonical, metadate Open Graph, favicon, sitemap și robots.txt.
 
+Adresele CSS și JavaScript includ automat o versiune calculată din conținutul fiecărui fișier. La upload, încarcă și `includes/header.php`, pentru ca browserul și cache-ul CDN să solicite versiunea actualizată a resurselor.
+
 Contoarele de pe paginile Acasă, Despre noi și Servicii sunt afișate prin componenta comună `includes/stats.php` și configurate în `$stats` din `includes/data.php`: 15 proiecte finalizate și 25 autorizații emise. Numerele se animează o singură dată la apariția în ecran; rămân vizibile fără JavaScript și fără animație pentru preferința de mișcare redusă.
 
 ## Configurarea contactului
