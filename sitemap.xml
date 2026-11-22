@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://zercoinfrastructure.ro/</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/despre-noi.php</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/servicii.php</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/serviciu.php?serviciu=infrastructura-rutiera</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/serviciu.php?serviciu=poduri-si-structuri</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/serviciu.php?serviciu=consultanta-tehnica</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/serviciu.php?serviciu=asistenta-tehnica</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/proiecte.php</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/domenii.php</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/cariere.php</loc></url>
-  <url><loc>https://zercoinfrastructure.ro/confidentialitate.php</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/despre-noi</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/servicii</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/serviciu?serviciu=infrastructura-rutiera</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/serviciu?serviciu=poduri-si-structuri</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/serviciu?serviciu=consultanta-tehnica</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/serviciu?serviciu=asistenta-tehnica</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/proiecte</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/domenii</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/cariere</loc></url>
+  <url><loc>https://zercoinfrastructure.ro/confidentialitate</loc></url>
 </urlset>

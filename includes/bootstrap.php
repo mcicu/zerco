@@ -15,11 +15,11 @@ function icon($name, $class = '') {
     return '<svg class="icon ' . e($class) . '" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . (isset($paths[$name]) ? $paths[$name] : $paths['compass']) . '</svg>';
 }
 function service_card($slug, $service) {
-    echo '<a class="service-card" href="serviciu.php?serviciu=' . e($slug) . '"><span class="service-icon">' . icon($service['icon']) . '</span><h3>' . e($service['title']) . '</h3><p>' . e($service['short']) . '</p><span class="card-link">Descoperă serviciul <span aria-hidden="true">+</span></span></a>';
+    echo '<a class="service-card" href="/serviciu?serviciu=' . e($slug) . '"><span class="service-icon">' . icon($service['icon']) . '</span><h3>' . e($service['title']) . '</h3><p>' . e($service['short']) . '</p><span class="card-link">Descoperă serviciul <span aria-hidden="true">+</span></span></a>';
 }
 function page_intro($eyebrow, $title, $description) {
-    echo '<section class="page-intro"><div class="container"><div class="breadcrumb"><a href="index.php">Acasă</a><span>/</span><span>' . e($eyebrow) . '</span></div><span class="eyebrow">' . e($eyebrow) . '</span><h1>' . $title . '</h1><p>' . e($description) . '</p></div></section>';
+    echo '<section class="page-intro"><div class="container"><div class="breadcrumb"><a href="/">Acasă</a><span>/</span><span>' . e($eyebrow) . '</span></div><span class="eyebrow">' . e($eyebrow) . '</span><h1>' . $title . '</h1><p>' . e($description) . '</p></div></section>';
 }
 function project_card($p) {
-    echo '<article class="project-card" data-category="' . e($p['category']) . '"><a href="serviciu.php?serviciu=' . e($p['service']) . '&amp;scenariu=' . e($p['slug']) . '"><div class="project-image"><img src="assets/images/' . e($p['image']) . '" alt="" width="800" height="600" loading="lazy"><span class="image-tag">Scenariu de proiect</span></div><div class="project-copy"><span class="eyebrow">' . e($p['label']) . '</span><h3>' . e($p['title']) . '</h3><p>' . e($p['text']) . '</p><span class="card-link">Explorează soluția <span aria-hidden="true">+</span></span></div></a></article>';
+    echo '<article class="project-card" data-category="' . e($p['category']) . '"><a href="/serviciu?serviciu=' . e($p['service']) . '&amp;scenariu=' . e($p['slug']) . '"><div class="project-image"><img src="/assets/images/' . e($p['image']) . '" alt="" width="800" height="600" loading="lazy"><span class="image-tag">Scenariu de proiect</span></div><div class="project-copy"><span class="eyebrow">' . e($p['label']) . '</span><h3>' . e($p['title']) . '</h3><p>' . e($p['text']) . '</p><span class="card-link">Explorează soluția <span aria-hidden="true">+</span></span></div></a></article>';
 }

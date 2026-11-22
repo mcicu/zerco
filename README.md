@@ -7,20 +7,20 @@ Site de prezentare în limba română, scris pentru **PHP 7.4**, fără framewor
 Din directorul proiectului, pe un sistem care are PHP instalat:
 
 ```sh
-php -S localhost:8080
+php -S localhost:8080 includes/router.php
 ```
 
-Deschide `http://localhost:8080`. Nu este necesară instalarea de pachete și nu există etapă de build. Pentru publicare, copiază proiectul pe o găzduire PHP, cu `index.php` în directorul public. Configurația Apache inclusă presupune instalarea în rădăcina domeniului. Pe Nginx, configurează indexul, pagina 404 și blocarea accesului HTTP la `includes/`, fișiere ascunse și documentație.
+Deschide `http://localhost:8080`. Nu este necesară instalarea de pachete și nu există etapă de build. Pentru publicare, copiază proiectul pe o găzduire PHP, cu `index.php` în directorul public. Fișierul `.htaccess` din rădăcină trebuie încărcat pe server pentru adresele fără extensie; necesită Apache/LiteSpeed cu rescriere URL activă și instalarea în rădăcina domeniului. Rescrierea este internă, fără redirecționări HTTP de la adresele vechi. Pe Nginx, configurează rezolvarea internă a adreselor fără extensie către PHP-FPM, indexul, pagina 404 și blocarea accesului HTTP la `includes/`, fișiere ascunse și documentație.
 
 ## Pagini
 
-- Acasă: `index.php`
-- Despre noi: `despre-noi.php`
-- Servicii: `servicii.php`, cu patru pagini generate de `serviciu.php?serviciu=...`
-- Domenii: `domenii.php`
-- Proiecte: `proiecte.php`, cu scenarii explicit ilustrative pentru un drum local și un pod rutier
-- Contact: `contact.php`
-- Cariere și colaborări: `cariere.php`
+- Acasă: `/`
+- Despre noi: `/despre-noi`
+- Servicii: `/servicii`, cu patru pagini generate de `/serviciu?serviciu=...`
+- Domenii: `/domenii`
+- Proiecte: `/proiecte`, cu scenarii explicit ilustrative pentru un drum local și un pod rutier
+- Contact: `/contact`
+- Cariere și colaborări: `/cariere`
 - Confidențialitate și pagină 404
 
 Datele comune și descrierile serviciilor se editează în `includes/data.php`. Antetul și subsolul sunt comune. SEO: titluri și descrieri pe pagini, URL canonical, metadate Open Graph, favicon, sitemap și robots.txt.
